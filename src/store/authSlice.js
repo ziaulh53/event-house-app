@@ -11,11 +11,11 @@ export const authSlice = createSlice({
   initialState,
   reducers: {
     loginStore: (state, action)=>{
-      const {user,token}=action?.payload;// ?what means
+      const {user,token}=action?.payload;
       state.isAuthenticated=true,
       state.token=token,
       state.user=user,
-      window.location.reload(); //What is this
+      window.location.reload(); //What's means by this 
     },
     logoutStore: (state)=>{
       state.isAuthenticated=false,
