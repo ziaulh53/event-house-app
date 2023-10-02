@@ -1,22 +1,41 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
+import { api, auth } from "../api";
+import { useDispatch } from "react-redux";
+import { loginStore } from "../store/authSlice";
+import { notify } from "../utils";
 
 const Login = () => {
+
+  const dispatch = useDispatch();
+
   const [credential, setCredential] = useState({
     email: "",
     password: "",
   });
 
   const onChange = (e) => {
-    const [name, value] = e.target;
+    const {name, value} = e.target;
     setCredential({ ...credential, [name]: value });
   };
 
-  const onSubmit = () => {};
+  const onSubmit = async() => {
+    try {
+      const result = await api.post(auth.login, credential);
+      console.log(result);
+      if(result.success){
+        dispatch(loginStore({user: result?.user, token: result?.token}));
+      }else{
+        notify(result);
+      }
+    } catch (error) {
+      console.log(error);
+    }
+  };
 
   return (
     <div className=" w-full h-screen flex items-center justify-center">
-      <div className="border w-[70%] md:w-[40%] rounded">
+      <div className="border w-[70%] md:w-[40%] rounded shadow">
         <div>
           <h2 className="bg-gray-700 text-white text-2xl md:text-3xl text-center py-4 font-semibold rounded-t">
             Login
@@ -35,22 +54,22 @@ const Login = () => {
             />
           </div>
           <div className="mt-3">
-            <label className="text-base md:text-lg font-semibold" htmlFor="">
+            <label className="text-base md:text-lg font-semibold">
               Password
             </label>
             <input
               className="w-full py-2 px-3 border shadow rounded mt-2 focus:outline-none"
               value={credential.password}
-              onChange={onchange}
+              onChange={onChange}
               type="password"
               placeholder="Enter Your Password"
               name="password"
             />
             <Link
               className="text-sm text-blue-600 hover:text-blue-700 font-semibold"
-              to="/foregot-password"
+              to="/forgot-password"
             >
-              Foregot Password?
+              Forgot Password?
             </Link>
           </div>
 

@@ -1,21 +1,27 @@
 import React from "react";
+import { useSelector } from "react-redux";
+import { Link } from "react-router-dom";
+import Account from "./Home/Account";
 
 const Layout = ({ children }) => {
+
+const {isAuthenticated} = useSelector((state)=>state.auth);
+
   return (
     <div>
       <nav className="flex justify-between items-center bg-gray-900 px-8 lg:px-16 h-16">
         <div className="text-3xl font-bold text-white">
-          <a href="/">E-M</a>
+          <Link to={"/"}>E-M</Link>
         </div>
         <ul className="flex h-full">
           <li className="px-3 text-white text-lg hover:bg-gray-600 h-full flex items-center">
-            <a href="/">Home</a>
+          <Link to={"/"}>Home</Link>
           </li>
           <li className="px-3 text-white text-lg hover:bg-gray-600 h-full flex items-center">
-            <a href="/events">Events</a>
+          <Link to={"/events"}>Events</Link>
           </li>
           <li className="px-3 text-white text-lg hover:bg-gray-600 h-full flex items-center">
-            <a href="/signin">Login</a>
+          {isAuthenticated? <Account/> : <Link to={"/signin"}>Login</Link>}
           </li>
         </ul>
       </nav>
@@ -48,19 +54,19 @@ const Layout = ({ children }) => {
             </h1>
             <ul className="text-sm md:text-base">
               <li>
-                <a href="">Phone: 1954238</a>
+                <Link href="">Phone: 1954238</Link>
               </li>
               <li>
-                <a href="">Email: event@gmail.com</a>
+                <Link href="">Email: event@gmail.com</Link>
               </li>
               <li className="py-2">
-                <a href="" className="flex gap-5">
+                <Link to="" className="flex gap-5">
                   <i className="fa-brands fa-facebook  text-sky-600"></i>
                   <i className="fa-brands fa-twitter  text-sky-500"></i>
                   <i className="fa-brands fa-linkedin  text-sky-600"></i>
                   <i className="fa-brands fa-whatsapp text-green-400"></i>
                   <i className="fa-brands fa-instagram text-red-400"></i>
-                </a>
+                </Link>
               </li>
             </ul>
           </div>

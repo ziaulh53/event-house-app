@@ -1,6 +1,8 @@
 import React, { useState } from "react";
 import { AfterSignup, BeforeSignup, Layout } from "../components";
 import { notify } from "../utils";
+import { api, auth } from "../api";
+import { useNavigate } from "react-router-dom";
 
 const Signup = () => {
   const [userData, setUserData] = useState({
@@ -12,21 +14,30 @@ const Signup = () => {
     role: "",
   });
   const [visible, setvisible] = useState(false);
+  const navigate = useNavigate();
   const handleComponentVisible = () => {
     setvisible(!visible);
   };
 
   // for api call
   const onRegister = async ()=>{
-    try {
-      const res = await apoi;
-      notify(res)
-    } catch (error) {
-      console.log(error)
+   try {
+    const result = await api.post(auth.reg, userData);
+   
+    if(result.success){
+      notify(result);
+      navigate('/signin');
     }
+    else{
+      notify(result);
+    }
+    
+   } catch (error) {
+    console.log(error);
+   }
   }
 
-  const disabled = !userData.name || !userData.phone || !userData.email || !userData.password || !userData.password !== userData.cPassword;
+  const disabled = !userData.name || !userData.phone || !userData.email || !userData.password || userData.password !== userData.cPassword;
   return (
     <Layout>
       <div className="w-full min-h-screen flex justify-center items-center">

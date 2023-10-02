@@ -5,3 +5,5 @@ export { default as Events } from "./Events";
 export { default as Signup } from "./Signup";
 export { default as Users } from "./Users";
 export { default as UsersForm } from "./UsersForm";
+export { default as ForgotPassword } from "./ForgotPassword";
+export { default as ResetPassword } from "./ResetPassword";

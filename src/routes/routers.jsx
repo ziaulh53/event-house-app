@@ -1,37 +1,59 @@
-import { Events, Home, Login, NotFound,Signup, Users, UsersForm } from "../pages";
+import {
+  ResetPassword,
+  Events,
+  ForgotPassword,
+  Home,
+  Login,
+  Signup,
+  Users,
+  UsersForm,
+} from "../pages";
 
 export const PublicRoutes = [
   {
-    path:"/",
-    element: <Home />
-  }
-]
+    path: "/",
+    element: <Home />,
+  },
+];
 
 export const AuthRoutes = [
   {
-    path:"/signin",
-    element: <Login />
+    path: "/signin",
+    element: <Login />,
   },
   {
-    path:"/signup",
-    element: <Signup />
+    path: "/signup",
+    element: <Signup />,
+  },
+  {
+    path: "/forgot-password",
+    element: <ForgotPassword />
+  },
+  {
+    path:"/reset-password",
+    element:<ResetPassword/>
   }
-]
+];
 
 export const PrivateRoutes = [
   {
-    path:"/users",
-    element: <Users />
+    path: "/users",
+    element: <Users />,
   },
   {
-    path:"/users/:id",
-    element: <UsersForm />
+    path: "/users/:id",
+    element: <UsersForm />,
   },
   {
-    path:"/account",
-    element: <UsersForm />
-  }
-]
+    path: "/account",
+    element: <UsersForm />,
+  },
+  {
+    path: "/events",
+    element: <Events />,
+  },
+ 
+];
 
 // const router = createBrowserRouter([
 //   {
