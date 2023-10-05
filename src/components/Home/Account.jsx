@@ -21,8 +21,8 @@ const Account = () => {
   const items = [
     {
       label: (
-        <Link to={""} className="text-sm text-gray-900 font-semibold">
-          <i className="fa-regular fa-user"></i> Profile
+        <Link to={"/account"} className="text-sm text-gray-900 font-semibold">
+          <i className="fa-regular fa-user"></i> Account
         </Link>
       ),
       key: "0",

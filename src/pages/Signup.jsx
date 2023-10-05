@@ -13,31 +13,37 @@ const Signup = () => {
     cPassword: "",
     role: "",
   });
-  const [visible, setvisible] = useState(false);
+
   const navigate = useNavigate();
+
+  const [visible, setvisible] = useState(false);
+
   const handleComponentVisible = () => {
     setvisible(!visible);
   };
 
   // for api call
-  const onRegister = async ()=>{
-   try {
-    const result = await api.post(auth.reg, userData);
-   
-    if(result.success){
-      notify(result);
-      navigate('/signin');
-    }
-    else{
-      notify(result);
-    }
-    
-   } catch (error) {
-    console.log(error);
-   }
-  }
+  const onRegister = async () => {
+    try {
+      const result = await api.post(auth.reg, userData);
 
-  const disabled = !userData.name || !userData.phone || !userData.email || !userData.password || userData.password !== userData.cPassword;
+      if (result.success) {
+        notify(result);
+        navigate("/signin");
+      } else {
+        notify(result);
+      }
+    } catch (error) {
+      console.log(error);
+    }
+  };
+
+  const disabled =
+    !userData.name ||
+    !userData.phone ||
+    !userData.email ||
+    !userData.password ||
+    userData.password !== userData.cPassword;
   return (
     <Layout>
       <div className="w-full min-h-screen flex justify-center items-center">
@@ -55,9 +61,9 @@ const Signup = () => {
           <div className="text-center mt-5">
             <button
               type="button"
-              onClick={ visible ? onRegister: handleComponentVisible}
+              onClick={visible ? onRegister : handleComponentVisible}
               className="text-lg text-white font-semibold bg-blue-500 w-20 p-1 rounded disabled:bg-blue-400 disabled:cursor-not-allowed"
-              disabled={visible? disabled: !userData?.role}
+              disabled={visible ? disabled : !userData?.role}
             >
               {!visible ? "Next" : "Submit"}
             </button>

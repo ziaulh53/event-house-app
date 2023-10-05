@@ -7,6 +7,9 @@ import {
   Signup,
   Users,
   UsersForm,
+  MyEvents,
+  CreateEvent,
+  Profile,
 } from "../pages";
 
 export const PublicRoutes = [
@@ -51,6 +54,18 @@ export const PrivateRoutes = [
   {
     path: "/events",
     element: <Events />,
+  },
+  {
+    path: "/create-event",
+    element: <CreateEvent />,
+  },
+  {
+    path: "/my-events",
+    element: <MyEvents />,
+  },
+  {
+    path: "/profile",
+    element: <Profile />,
   },
  
 ];

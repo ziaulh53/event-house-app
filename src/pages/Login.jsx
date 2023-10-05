@@ -24,6 +24,7 @@ const Login = () => {
       const result = await api.post(auth.login, credential);
       console.log(result);
       if(result.success){
+        notify(result);
         dispatch(loginStore({user: result?.user, token: result?.token}));
       }else{
         notify(result);

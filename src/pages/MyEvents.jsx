@@ -1,12 +1,12 @@
 import React from "react";
 import { LayoutAccount } from "../components/DashboardLayout";
 
-const UsersForm = () => {
+const MyEvents = () => {
   return (
     <LayoutAccount>
-      <div className="font-bold text-gray-500">Accounts Home</div>
+      <div>MyEvents</div>
     </LayoutAccount>
   );
 };
 
-export default UsersForm;
+export default MyEvents;

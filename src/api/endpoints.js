@@ -3,7 +3,10 @@ export const auth = {
     reg: '/signup',
     logout: '/logout',
     forgotPassword: '/forgot-password',
-    resetPassword: '/reset-password'
+    resetPassword: '/reset-password',
+    updateProfile:'/update-profile/',
+    updateEmail:'/update-email/',
+    updatePassword:'/update-password/'
 }
 
 

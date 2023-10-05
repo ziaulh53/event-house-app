@@ -7,3 +7,6 @@ export { default as Users } from "./Users";
 export { default as UsersForm } from "./UsersForm";
 export { default as ForgotPassword } from "./ForgotPassword";
 export { default as ResetPassword } from "./ResetPassword";
+export { default as CreateEvent } from "./CreateEvent";
+export { default as MyEvents } from "./MyEvents";
+export { default as Profile } from "./Profile";

@@ -22,9 +22,12 @@ export const authSlice = createSlice({
       state.token = "";
       state.user = {};
     },
+    updateProfile: (state, action) => {
+      state.user={...state.user, ...action.payload}
+    },
   },
 });
 
-export const { loginStore, logoutStore } = authSlice.actions;
+export const { loginStore, logoutStore, updateProfile } = authSlice.actions;
 
 export default authSlice;
