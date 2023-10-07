@@ -40,7 +40,7 @@ export const EmailUpdate = () => {
 
   const disabled = !update.email || !update.password;
   return (
-    <div className=" bg-gray-200 p-5 rounded mb-5">
+    <div className=" bg-gray-200 p-5 rounded mb-5 shadow-lg">
       <Spin spinning={emailUpdateLoader}>
         <h2 className=" text-xl font-bold pb-4 text-center uppercase">Change Email</h2>
 

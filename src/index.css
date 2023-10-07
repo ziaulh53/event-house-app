@@ -10,3 +10,7 @@
     @apply bg-blue-950 hover:bg-blue-900 text-white text-sm rounded-md px-5 py-[6px] cursor-pointer disabled:bg-gray-500 disabled:cursor-default;
   }
 }
+
+.slick-list{
+  @apply rounded-lg
+}

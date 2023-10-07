@@ -17,6 +17,10 @@ export const PublicRoutes = [
     path: "/",
     element: <Home />,
   },
+  {
+    path: "/events",
+    element: <Events />,
+  },
 ];
 
 export const AuthRoutes = [
@@ -30,12 +34,12 @@ export const AuthRoutes = [
   },
   {
     path: "/forgot-password",
-    element: <ForgotPassword />
+    element: <ForgotPassword />,
   },
   {
-    path:"/reset-password",
-    element:<ResetPassword/>
-  }
+    path: "/reset-password",
+    element: <ResetPassword />,
+  },
 ];
 
 export const PrivateRoutes = [
@@ -52,10 +56,6 @@ export const PrivateRoutes = [
     element: <UsersForm />,
   },
   {
-    path: "/events",
-    element: <Events />,
-  },
-  {
     path: "/create-event",
     element: <CreateEvent />,
   },
@@ -67,7 +67,6 @@ export const PrivateRoutes = [
     path: "/profile",
     element: <Profile />,
   },
- 
 ];
 
 // const router = createBrowserRouter([

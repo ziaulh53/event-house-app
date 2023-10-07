@@ -58,7 +58,7 @@ export const PasswordUpdate = () => {
     !update.newPassword ||
     update.newPassword != update.confirmPassword;
   return (
-    <div className=" bg-gray-200 p-5 rounded mb-5">
+    <div className=" bg-gray-200 p-5 rounded mb-5 shadow-lg">
       <Spin spinning={changePasswordLoader}>
         <h2 className="text-xl font-bold pb-4 text-center uppercase">Change Password</h2>
         <EventInput

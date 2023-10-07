@@ -61,7 +61,7 @@ export const BasicInfo = () => {
   const disabled = !update.name || !update.phone || (update.name==user?.name && update.phone==user?.phone && update.avatar==user.avatar);
 
   return (
-    <div className=" bg-gray-200 p-5 rounded mb-5">
+    <div className=" bg-gray-200 p-5 rounded mb-5 shadow-lg">
       <Spin spinning={loading}>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-5">
           <EventInput
