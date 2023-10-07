@@ -13,7 +13,7 @@ const EventsCard = () => {
         </div>
       </div>
 
-      <div className="flex justify-between py-2">
+      <div className="flex justify-between py-2 px-1">
         <div className="flex">
           <div className="mr-1">
             <Avatar src="../../public/img/card-avatar.png" />
@@ -28,7 +28,7 @@ const EventsCard = () => {
       </div>
 
       
-        <p className="text-sm py-2">We are give best services on social events.</p>
+        <p className="text-sm py-2 px-1">We are give best services on social events.</p>
       
     </div>
   );
