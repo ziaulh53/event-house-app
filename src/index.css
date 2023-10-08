@@ -7,10 +7,24 @@
     @apply bg-blue-950 hover:bg-blue-900 text-white text-sm rounded-md px-5 py-[6px] cursor-pointer disabled:bg-gray-500 disabled:cursor-default;
   }
   .event-btn-danger {
-    @apply bg-blue-950 hover:bg-blue-900 text-white text-sm rounded-md px-5 py-[6px] cursor-pointer disabled:bg-gray-500 disabled:cursor-default;
+    @apply bg-red-900 hover:bg-red-800 text-white text-sm rounded-md px-5 py-[6px] cursor-pointer disabled:bg-gray-500 disabled:cursor-default;
   }
 }
 
+/* Rounded slider images */
 .slick-list{
   @apply rounded-lg
+}
+
+/* #Removed number input field arrow */
+/* Chrome, Safari, Edge, Opera */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Firefox */
+input[type=number] {
+  -moz-appearance: textfield;
 }

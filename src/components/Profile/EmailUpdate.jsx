@@ -28,8 +28,7 @@ export const EmailUpdate = () => {
       if (result?.success) {
         notify(result);
         dispatch(updateProfile(update));
-      }
-      else{
+      } else {
         notify(result);
       }
     } catch (error) {
@@ -42,7 +41,9 @@ export const EmailUpdate = () => {
   return (
     <div className=" bg-gray-200 p-5 rounded mb-5 shadow-lg">
       <Spin spinning={emailUpdateLoader}>
-        <h2 className=" text-xl font-bold pb-4 text-center uppercase">Change Email</h2>
+        <h2 className=" text-xl font-bold pb-4 text-center uppercase">
+          Change Email
+        </h2>
 
         <EventInput
           className="mb-3"
@@ -64,14 +65,19 @@ export const EmailUpdate = () => {
         <EventInput
           label="Current Password"
           type="password"
-          value={user.password}
+          value={update.password}
           name="password"
           onChange={onChange}
           placeholder="*******"
         />
 
         <div className="mt-5 text-end">
-          <EventButton btnText="Update" onClick={onEmailUpdate} disabled={disabled} />
+          <EventButton
+            btnText="Update"
+            className="event-btn-primary"
+            onClick={onEmailUpdate}
+            disabled={disabled}
+          />
         </div>
       </Spin>
     </div>

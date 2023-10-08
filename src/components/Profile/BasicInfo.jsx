@@ -71,6 +71,7 @@ export const BasicInfo = () => {
             onChange={onChange}
           />
           <EventInput
+          type="number"
             label="Phone"
             value={update.phone}
             name="phone"
@@ -91,6 +92,7 @@ export const BasicInfo = () => {
         <div className="mt-5 text-end">
           <EventButton
             btnText="Update"
+            className='event-btn-primary'
             disabled={disabled}
             onClick={onProfileUpdate}
           />
@@ -99,3 +101,25 @@ export const BasicInfo = () => {
     </div>
   );
 };
+
+
+// import React from "react";
+
+// export const EventButton = ({
+//   loading = false,
+//   btnText,
+//   onClick,
+//   className,
+//   disabled=false,
+// }) => {
+//   return (
+//     <button
+//       className={className}
+//       onClick={onClick}
+//       disabled={disabled || loading}
+//     >
+//       {btnText}
+//     </button>
+//   );
+// };
+

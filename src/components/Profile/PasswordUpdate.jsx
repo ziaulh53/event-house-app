@@ -94,6 +94,7 @@ export const PasswordUpdate = () => {
         <div className="mt-5 text-end">
           <EventButton
             btnText="Update"
+            className='event-btn-danger'
             onClick={handleUpdate}
             disabled={disabled}
           />

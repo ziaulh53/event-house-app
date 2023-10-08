@@ -1,4 +1,3 @@
-import { Button } from "antd";
 import React from "react";
 
 export const EventButton = ({
@@ -7,12 +6,10 @@ export const EventButton = ({
   onClick,
   className,
   disabled=false,
-  type = "primary",
 }) => {
   return (
     <button
-      className={`event-btn-${type} ${className}`}
-      type={type}
+      className={className}
       onClick={onClick}
       disabled={disabled || loading}
     >
