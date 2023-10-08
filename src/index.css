@@ -4,10 +4,10 @@
 
 @layer components {
   .event-btn-primary {
-    @apply bg-blue-950 hover:bg-blue-900 text-white text-sm rounded-md px-5 py-[6px] cursor-pointer disabled:bg-gray-500 disabled:cursor-default;
+    @apply bg-blue-950 hover:bg-blue-900 text-white text-sm rounded-md px-5 py-[6px] cursor-pointer font-semibold disabled:bg-gray-500 disabled:cursor-default;
   }
   .event-btn-danger {
-    @apply bg-red-900 hover:bg-red-800 text-white text-sm rounded-md px-5 py-[6px] cursor-pointer disabled:bg-gray-500 disabled:cursor-default;
+    @apply bg-red-900 hover:bg-red-800 text-white text-sm rounded-md px-5 py-[6px] cursor-pointer font-semibold disabled:bg-gray-500 disabled:cursor-default;
   }
 }
 

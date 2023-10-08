@@ -15,6 +15,10 @@ export const category = {
     getCategory: '/category',
 }
 
+export const services= {
+    services: '/service/'
+}
+
 
 
 

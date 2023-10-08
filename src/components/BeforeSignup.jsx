@@ -1,41 +1,49 @@
-import React, { useState } from "react";
-import { Card } from "antd";
+import React from "react";
+import { Card, Space } from "antd";
 import { Radio } from "antd";
+import { EventButton } from "./Shared/EventButton";
 
-const BeforeSignup = ({ setUserData, userData }) => {
+const BeforeSignup = ({ setUserData, userData, handleComponentVisible }) => {
   const onChange = (e) => {
-    setUserData({...userData, 'role': e.target.value});
+    setUserData({ ...userData, role: e.target.value });
   };
 
   return (
-    <Radio.Group
-      className="grid grid-cols-12 gap-5"
-      onChange={onChange}
-      value={userData.role}
-    >
-      <Radio value="seller" className="col-span-12 md:col-span-6">
-        <div className="cart">
-          <Card title="As a Seller" className="w-72 shadow">
-            <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Eligendi
-              enim recusandae esse obcaecati dignissimos eveniet delectus ipsum
-              ex blanditiis sit!
-            </p>
-          </Card>
+    <div className="min-h-[53vh]">
+      <div className="grid grid-cols-1 md:grid-cols-3">
+        <Radio.Group
+          className="col-start-1 md:col-start-2"
+          onChange={onChange}
+          value={userData.role}
+        >
+          <Space
+            direction="horizontal"
+            className="grid grid-cols-1 md:grid-cols-2"
+          >
+            <Radio value="seller" className="w-full">
+              <Card title="As a Seller" className="shadow">
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+              </Card>
+            </Radio>
+            <Radio value="buyer" className="w-full">
+              <Card title="As a Buyer" className="shadow">
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+              </Card>
+            </Radio>
+          </Space>
+        </Radio.Group>
+      </div>
+      <div className="grid grid-cols-1 md:grid-cols-3 mt-5">
+        <div className="text-center md:col-start-2">
+          <EventButton
+            btnText="NEXT"
+            className="event-btn-primary w-[100px]"
+            onClick={handleComponentVisible}
+            disabled={!userData?.role}
+          />
         </div>
-      </Radio>
-      <Radio value="buyer" className="col-span-12 md:col-span-6">
-        <div className="cart">
-          <Card title="As a Buyer" className="w-72 shadow">
-            <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Eligendi
-              enim recusandae esse obcaecati dignissimos eveniet delectus ipsum
-              ex blanditiis sit!
-            </p>
-          </Card>
-        </div>
-      </Radio>
-    </Radio.Group>
+      </div>
+    </div>
   );
 };
 
