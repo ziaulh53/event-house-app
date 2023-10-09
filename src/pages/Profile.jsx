@@ -1,7 +1,5 @@
-import React, { useState } from "react";
-import { useSelector } from "react-redux";
+import React from "react";
 import { PageTitle, LayoutAccount } from "../components/DashboardLayout";
-import { EventInput, EventButton } from "../components/Shared";
 import { BasicInfo, EmailUpdate, PasswordUpdate } from "../components/Profile";
 
 const Profile = () => {

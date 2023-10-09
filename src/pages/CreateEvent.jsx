@@ -5,14 +5,13 @@ import { EventInput } from "../components/Shared/EventInput";
 import { Select, Upload } from "antd";
 import { useSelector } from "react-redux";
 import { EventButton } from "../components/Shared/EventButton";
+import { notify } from "../utils";
 
 const CreateEvent = () => {
   const { token } = useSelector((state) => state.auth);
   const [cateogryList, setCategorylist] = useState([]);
   const [fileList, setFileList] = useState([]);
   const [state, setState] = useState({
-    category_id: "",
-    images: [],
     title: "",
   });
 
@@ -26,8 +25,14 @@ const CreateEvent = () => {
         images.push(file?.response?.url);
       });
       const res = await api.post(services.services, { ...state, images });
-      console.log(res.data);
+      if (res.success) {
+        notify(res);
+        console.log(res.data);
+      } else {
+        notify(res);
+      }
     } catch (error) {
+      notify(error);
       console.log(error);
     }
     setLoading(false);
@@ -46,7 +51,7 @@ const CreateEvent = () => {
   const fetchServices = async () => {
     try {
       const res = await api.get(services.services);
-      console.log(res)
+      console.log(res);
     } catch (error) {
       console.log(error);
     }
@@ -58,10 +63,10 @@ const CreateEvent = () => {
 
   useEffect(() => {
     fetCategoryList();
-    fetchServices()
+    fetchServices();
   }, []);
 
-  const disabled = !state.category || !state.title || !fileList.length;
+  const disabled = !state.category_id || !state.title || !fileList.length;
 
   return (
     <LayoutAccount>
@@ -74,8 +79,8 @@ const CreateEvent = () => {
             value={state.category_id}
             className="w-full"
             size="large"
+            placeholder="Select Category"
           >
-            <Select.Option key="">Select Category</Select.Option>
             {cateogryList.map((ct) => (
               <Select.Option key={ct?.id}>{ct?.name}</Select.Option>
             ))}
@@ -98,6 +103,7 @@ const CreateEvent = () => {
           listType="picture-card"
           fileList={fileList}
           onChange={handleChange}
+          beforeUpload={(file) => console.log(file)}
           maxCount={5}
         >
           {fileList.length >= 5 ? null : (

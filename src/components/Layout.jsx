@@ -25,7 +25,7 @@ const {isAuthenticated} = useSelector((state)=>state.auth);
           </li>
         </ul>
       </nav>
-      <div className="px-4 md:px-8 lg:px-16 mt-8">{children}</div>
+      <div className="px-4 md:px-8 lg:px-16 my-8 min-h-[39.3vh]">{children}</div>
 
       <footer className="bg-gray-800 mt-8 text-white">
         <div className="grid grid-cols-12 px-12">

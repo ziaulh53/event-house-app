@@ -5,40 +5,42 @@ import { useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import Like from "./Like";
 
-const EventsCard = () => {
-  const {isAuthenticated} = useSelector((state)=>state.auth);
+const EventsCard = ({ key, info }) => {
+  const { isAuthenticated } = useSelector((state) => state.auth);
   const navigate = useNavigate();
 
-  const handleLogout = ()=>{
-    isAuthenticated?<Like />:navigate('/signin');
-  }
+  const handleLogout = () => {
+    isAuthenticated ? <Like /> : navigate("/signin");
+  };
   return (
     <div className="px-8 sm:p-0 shadow-lg rounded-lg">
       <div className="relative rounded-lg">
-        <EventSlider />
-        <button className="text-2xl absolute top-0 right-1" onClick={handleLogout} >
+        <EventSlider images={info?.images} />
+        <div
+          className="text-2xl absolute top-2 right-2 cursor-pointer bg-gray-500 bg-opacity-50 px-2 text-yellow-600 rounded-lg"
+          onClick={handleLogout}
+        >
           <i className="fa-regular fa-heart"></i>
           {/* <i className="fa-solid fa-heart"></i> */}
-        </button>
+        </div>
       </div>
 
-      <div className="flex justify-between py-2 px-1">
+      <div className="flex justify-between py-2 px-2">
         <div className="flex">
           <div className="mr-1">
-            <Avatar src="../../public/img/card-avatar.png" />
+            <Avatar src={info?.user?.avatar} />
           </div>
           {/* size={64} icon={<UserOutlined />} */}
-          <h2 className="font-bold">My Name</h2>
+          <h2 className="font-bold">{info?.user?.name}</h2>
         </div>
-        <div className="rating">
-          <i className="fa-regular fa-star"></i>
+        <div className="rating font-bold">
+          {info?.totalRating}
+          {/* <i className="fa-regular fa-star"></i> */}
           {/* <i className="fa-solid fa-star"></i> */}
         </div>
       </div>
 
-      
-        <p className="text-sm py-2 px-1">We are give best services on social events.</p>
-      
+      <p className="text-sm font-semibold py-2 px-2">{info?.title}</p>
     </div>
   );
 };
