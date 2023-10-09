@@ -11,7 +11,7 @@ const CreateEvent = () => {
   const [cateogryList, setCategorylist] = useState([]);
   const [fileList, setFileList] = useState([]);
   const [state, setState] = useState({
-    category: "",
+    category_id: "",
     images: [],
     title: "",
   });
@@ -22,8 +22,8 @@ const CreateEvent = () => {
     setLoading(true);
     try {
       const images = [];
-      fileList.forEach(file=>{
-         images.push(file?.response?.url);
+      fileList.forEach((file) => {
+        images.push(file?.response?.url);
       });
       const res = await api.post(services.services, { ...state, images });
       console.log(res.data);
@@ -42,12 +42,23 @@ const CreateEvent = () => {
     }
   };
 
+  // fetch services
+  const fetchServices = async () => {
+    try {
+      const res = await api.get(services.services);
+      console.log(res)
+    } catch (error) {
+      console.log(error);
+    }
+  };
+
   const handleChange = ({ fileList: newFileList }) => {
     setFileList(newFileList);
   };
 
   useEffect(() => {
     fetCategoryList();
+    fetchServices()
   }, []);
 
   const disabled = !state.category || !state.title || !fileList.length;
@@ -59,8 +70,8 @@ const CreateEvent = () => {
         <div className="mb-5">
           <div className="font-bold mb-2">Select Category</div>
           <Select
-            onChange={(value) => setState({ ...state, category: value })}
-            value={state.category}
+            onChange={(value) => setState({ ...state, category_id: value })}
+            value={state.category_id}
             className="w-full"
             size="large"
           >
