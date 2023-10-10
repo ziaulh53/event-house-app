@@ -1,7 +1,7 @@
 import React from "react";
 
 export const EventButton = ({
-  loading = false,
+  loading,
   btnText,
   onClick,
   className,

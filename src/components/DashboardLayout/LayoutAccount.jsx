@@ -17,6 +17,13 @@ export const LayoutAccount = ({ children }) => {
           <li className="px-3 text-white text-lg hover:bg-gray-600 h-full flex items-center">
             <Link to={"/events"}>Events</Link>
           </li>
+          <li className="px-1 flex items-center">
+            <div className="px-1 text-white text-lg hover:bg-gray-600 rounded-full">
+              <Link to={"#"}>
+                <i className="fa-solid fa-bell"></i>
+              </Link>
+            </div>
+          </li>
           <li className="px-3 text-white text-lg hover:bg-gray-600 h-full flex items-center">
             <Account />
           </li>
@@ -31,5 +38,3 @@ export const LayoutAccount = ({ children }) => {
     </div>
   );
 };
-
-

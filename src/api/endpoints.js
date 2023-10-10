@@ -19,6 +19,9 @@ export const services= {
     services: '/service/'
 }
 
+export const myServices= {
+    services: '/my-service/'
+}
 
 
 

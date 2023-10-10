@@ -29,7 +29,7 @@ const Events = () => {
       <Spin spinning={serviceLoader}>
         <div className="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-4 gap-5 ">
           {allServices.map((info) => (
-            <EventsCard key={info.id} info={info} />
+            <EventsCard key={info.id} shadow="shadow hover:shadow-2xl" info={info} />
           ))}
         </div>
       </Spin>

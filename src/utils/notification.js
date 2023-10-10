@@ -11,15 +11,15 @@ export const notify = (data, refetch, clearState) => {
     notification.success({
       message: data?.msg || "Request success!",
     });
+    if (typeof refetch === "function") {
+      refetch();
+    }
   } else {
     notification.warning({
       message: data?.msg || "Request failed!",
     });
   }
 
-  if (typeof refetch === "function") {
-    refetch();
-  }
   if (typeof refetch === "function") {
     clearState();
   }

@@ -2,11 +2,16 @@ import React from "react";
 import { Dropdown, Space, Avatar } from "antd";
 import { UserOutlined } from "@ant-design/icons";
 import { Link } from "react-router-dom";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { logoutStore } from "../../store/authSlice";
 import { api, auth } from "../../api";
 
 const Account = () => {
+  const { avatar } = useSelector((state) => state.auth.user);
+  
+  // Avatar Background
+  const bg = avatar?"":"bg-white";
+
   const dispatch = useDispatch();
 
   const onLogout = async () => {
@@ -65,9 +70,10 @@ const Account = () => {
           <a onClick={(e) => e.preventDefault()}>
             <Space>
               <Avatar
+                src={avatar}
                 size="large"
                 icon={<UserOutlined />}
-                className="bg-white text-gray-900"
+                className={`${bg} text-gray-900`}
               />
             </Space>
           </a>

@@ -5,7 +5,7 @@ import { useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import Like from "./Like";
 
-const EventsCard = ({ key, info }) => {
+const EventsCard = ({ shadow="shadow-lg", info, showHeart=true}) => {
   const { isAuthenticated } = useSelector((state) => state.auth);
   const navigate = useNavigate();
 
@@ -13,16 +13,16 @@ const EventsCard = ({ key, info }) => {
     isAuthenticated ? <Like /> : navigate("/signin");
   };
   return (
-    <div className="px-8 sm:p-0 shadow-lg rounded-lg">
+    <div className={`px-8 sm:p-0 ${shadow} rounded-lg`}>
       <div className="relative rounded-lg">
         <EventSlider images={info?.images} />
-        <div
+        {showHeart && <div
           className="text-2xl absolute top-2 right-2 cursor-pointer bg-gray-500 bg-opacity-50 px-2 text-yellow-600 rounded-lg"
           onClick={handleLogout}
         >
           <i className="fa-regular fa-heart"></i>
           {/* <i className="fa-solid fa-heart"></i> */}
-        </div>
+        </div>}
       </div>
 
       <div className="flex justify-between py-2 px-2">

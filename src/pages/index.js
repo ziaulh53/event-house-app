@@ -9,4 +9,5 @@ export { default as ForgotPassword } from "./ForgotPassword";
 export { default as ResetPassword } from "./ResetPassword";
 export { default as CreateEvent } from "./CreateEvent";
 export { default as MyEvents } from "./MyEvents";
+export { default as MyInbox } from "./MyInbox";
 export { default as Profile } from "./Profile";

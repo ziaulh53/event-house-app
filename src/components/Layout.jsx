@@ -4,8 +4,7 @@ import { Link } from "react-router-dom";
 import Account from "./Home/Account";
 
 const Layout = ({ children }) => {
-
-const {isAuthenticated} = useSelector((state)=>state.auth);
+  const { isAuthenticated } = useSelector((state) => state.auth);
 
   return (
     <div>
@@ -15,13 +14,22 @@ const {isAuthenticated} = useSelector((state)=>state.auth);
         </div>
         <ul className="flex h-full">
           <li className="px-3 text-white text-lg hover:bg-gray-600 h-full flex items-center">
-          <Link to={"/"}>Home</Link>
+            <Link to={"/"}>Home</Link>
           </li>
           <li className="px-3 text-white text-lg hover:bg-gray-600 h-full flex items-center">
-          <Link to={"/events"}>Events</Link>
+            <Link to={"/events"}>Events</Link>
           </li>
+          {isAuthenticated && (
+            <li className="px-1 flex items-center">
+              <div className="px-1 text-white text-lg hover:bg-gray-600 rounded-full">
+                <Link to={"#"}>
+                  <i className="fa-solid fa-bell"></i>
+                </Link>
+              </div>
+            </li>
+          )}
           <li className="px-3 text-white text-lg hover:bg-gray-600 h-full flex items-center">
-          {isAuthenticated? <Account/> : <Link to={"/signin"}>Login</Link>}
+            {isAuthenticated ? <Account /> : <Link to={"/signin"}>Login</Link>}
           </li>
         </ul>
       </nav>

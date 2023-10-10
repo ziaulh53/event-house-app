@@ -7,8 +7,8 @@ const Sidebar = () => {
     <div className="w-[200px] bg-gray-800 text-white min-h-screen">
       {SidebarMenu.map((menu) => (
         <div key={menu.path} className="py-4 pl-7 font-semibold text-sm hover:bg-gray-900">
-          <Link to={menu.path}>
-            <div className="icon">
+          <Link to={menu.path} className="flex hover:text-sky-400">
+            <div className="icon pr-2">
               <i className={menu.iconClassName}></i>
             </div>
             <div className="">{menu.label}</div>

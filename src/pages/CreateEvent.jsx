@@ -6,8 +6,11 @@ import { Select, Upload } from "antd";
 import { useSelector } from "react-redux";
 import { EventButton } from "../components/Shared/EventButton";
 import { notify } from "../utils";
+import { useNavigate } from "react-router-dom";
 
 const CreateEvent = () => {
+const navigate = useNavigate();
+
   const { token } = useSelector((state) => state.auth);
   const [cateogryList, setCategorylist] = useState([]);
   const [fileList, setFileList] = useState([]);
@@ -26,6 +29,7 @@ const CreateEvent = () => {
       });
       const res = await api.post(services.services, { ...state, images });
       if (res.success) {
+        navigate('/my-events');
         notify(res);
         console.log(res.data);
       } else {
@@ -110,6 +114,8 @@ const CreateEvent = () => {
         <div className="text-end">
           <EventButton
             btnText="Create"
+            loading={loading}
+            loadingText="Creating..."
             className="event-btn-primary"
             disabled={disabled || loading}
             onClick={handleSubmit}
