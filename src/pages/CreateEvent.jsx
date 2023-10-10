@@ -47,23 +47,12 @@ const CreateEvent = () => {
     }
   };
 
-  // fetch services
-  const fetchServices = async () => {
-    try {
-      const res = await api.get(services.services);
-      console.log(res);
-    } catch (error) {
-      console.log(error);
-    }
-  };
-
   const handleChange = ({ fileList: newFileList }) => {
     setFileList(newFileList);
   };
 
   useEffect(() => {
     fetCategoryList();
-    fetchServices();
   }, []);
 
   const disabled = !state.category_id || !state.title || !fileList.length;
@@ -113,7 +102,7 @@ const CreateEvent = () => {
                   marginTop: 8,
                 }}
               >
-                Upload
+                <i className="fas fa-upload"></i> Upload
               </div>
             </div>
           )}
