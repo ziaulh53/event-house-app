@@ -5,7 +5,8 @@ export const EventButton = ({
   btnText,
   onClick,
   className,
-  disabled=false,
+  disabled = false,
+  loadingText = "Loading...",
 }) => {
   return (
     <button
@@ -13,9 +14,13 @@ export const EventButton = ({
       onClick={onClick}
       disabled={disabled || loading}
     >
-      {btnText}
+      {loading ? (
+        <span>
+          <i className="fa-solid fa-spinner fa-spin mr-2"></i> {loadingText}
+        </span>
+      ) : (
+        btnText
+      )}
     </button>
   );
 };
-
-
