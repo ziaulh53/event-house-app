@@ -46,7 +46,7 @@ const Layout = ({ children }) => {
               voluptas alias ratione consequatur voluptatem praesentium.
             </p>
           </div>
-          <div className="col-span-12 md:col-span-4 p-5 md:py-5 md:pl-[35%]">
+          <div className="col-span-12 md:col-span-4 p-5 text-center">
             <h1 className="text-lg md:text-xl lg:text-2xl font-semibold mb-2">
               Address
             </h1>
@@ -56,7 +56,7 @@ const Layout = ({ children }) => {
               <li>Sylhet, Bangladesh</li>
             </ul>
           </div>
-          <div className="col-span-12 md:col-span-4 p-5 md:py-5 md:pl-[45%]">
+          <div className="col-span-12 md:col-span-4 p-5 text-right">
             <h1 className="text-lg md:text-xl lg:text-2xl font-semibold mb-2">
               Contact Us
             </h1>
@@ -68,7 +68,7 @@ const Layout = ({ children }) => {
                 <Link href="">Email: event@gmail.com</Link>
               </li>
               <li className="py-2">
-                <Link to="" className="flex gap-5">
+                <Link to="" className="flex gap-5 justify-end">
                   <i className="fa-brands fa-facebook  text-sky-600"></i>
                   <i className="fa-brands fa-twitter  text-sky-500"></i>
                   <i className="fa-brands fa-linkedin  text-sky-600"></i>
