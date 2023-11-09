@@ -46,7 +46,7 @@ const Layout = ({ children }) => {
               voluptas alias ratione consequatur voluptatem praesentium.
             </p>
           </div>
-          <div className="col-span-12 md:col-span-4 p-5">
+          <div className="col-span-12 md:col-span-4 p-5 md:py-5 md:pl-[35%]">
             <h1 className="text-lg md:text-xl lg:text-2xl font-semibold mb-2">
               Address
             </h1>
@@ -56,7 +56,7 @@ const Layout = ({ children }) => {
               <li>Sylhet, Bangladesh</li>
             </ul>
           </div>
-          <div className="col-span-12 md:col-span-4 p-5">
+          <div className="col-span-12 md:col-span-4 p-5 md:py-5 md:pl-[45%]">
             <h1 className="text-lg md:text-xl lg:text-2xl font-semibold mb-2">
               Contact Us
             </h1>
