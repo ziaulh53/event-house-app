@@ -11,3 +11,4 @@ export { default as CreateEvent } from "./CreateEvent";
 export { default as MyEvents } from "./MyEvents";
 export { default as MyInbox } from "./MyInbox";
 export { default as Profile } from "./Profile";
+export { default as MyFavourite } from "./MyFavourite";

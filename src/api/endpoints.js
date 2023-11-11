@@ -23,7 +23,9 @@ export const myServices= {
     services: '/my-service/'
 }
 
-
+export const favourite= {
+    favourite: '/favourite/'
+}
 
 
 export const fileUpload = '/file-upload';

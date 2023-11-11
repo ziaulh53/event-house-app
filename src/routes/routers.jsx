@@ -11,6 +11,7 @@ import {
   CreateEvent,
   Profile,
   MyInbox,
+  MyFavourite,
 } from "../pages";
 
 export const PublicRoutes = [
@@ -71,6 +72,10 @@ export const PrivateRoutes = [
   {
     path: "/profile",
     element: <Profile />,
+  },
+  {
+    path: "/my-fabourites",
+    element: <MyFavourite />,
   },
 ];
 
