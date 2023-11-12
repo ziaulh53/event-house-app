@@ -4,6 +4,7 @@ import { api, myServices } from "../api";
 import { notify } from "../utils";
 import { Card, Popconfirm, Spin } from "antd";
 import EventsCard from "../components/Events/EventsCard";
+import EditEvent from "../components/Events/EditEvent";
 
 const MyEvents = () => {
   const [loading, setLoading] = useState(false);
@@ -22,14 +23,21 @@ const MyEvents = () => {
     setLoading(false);
   };
 
-  const handleDelete= async(id)=>{
+  const handleDelete = async (id) => {
     try {
       const res = await api.delete(myServices.services, id);
       notify(res, getMyServices);
-    } catch (error) {
-      
-    }
-  }
+
+    } catch (error) {}
+  };
+
+  const [visible, setVisible] = useState(false);
+  const [inform, setInform] = useState([]);
+
+  const showModal = (info) => {
+    setInform(info);
+    setVisible(true);
+  };
 
   useEffect(() => {
     getMyServices();
@@ -37,6 +45,15 @@ const MyEvents = () => {
 
   return (
     <LayoutAccount>
+      {inform?.id && (
+        <EditEvent
+          visible={visible}
+          setVisible={setVisible}
+          info={inform}
+          setInform={setInform}
+          getMyServices={getMyServices}
+        />
+      )}
       <Spin spinning={loading}>
         <div className="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 gap-5 ">
           {allServices.map((info) => (
@@ -45,12 +62,16 @@ const MyEvents = () => {
               hoverable
               bordered
               actions={[
-                <Popconfirm title='Are you sure?' okType="danger" onConfirm={()=>handleDelete(info.id)}>
+                <Popconfirm
+                  title="Are you sure?"
+                  okType="danger"
+                  onConfirm={() => handleDelete(info.id)}
+                >
                   <span className="text-red-600">
                     <i className="fa-solid fa-trash-can"></i>
                   </span>
                 </Popconfirm>,
-                <span>
+                <span onClick={() => showModal(info)}>
                   <i className="fa-solid fa-pen-to-square"></i>
                 </span>,
               ]}

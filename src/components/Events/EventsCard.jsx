@@ -11,8 +11,6 @@ const EventsCard = ({ shadow = "shadow-lg", info, showHeart = true }) => {
   const { isAuthenticated } = useSelector((state) => state.auth);
   const navigate = useNavigate();
 
-  console.log(showHeart);
-
   const handleLogout = (id) => {
     isAuthenticated ? addFavourite(id) : navigate("/signin");
   };
