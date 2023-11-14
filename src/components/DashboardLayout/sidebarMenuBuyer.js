@@ -15,6 +15,11 @@ export const SidebarMenuBuyer = [
       iconClassName: "fa-regular fa-envelope",
     },
     {
+      label: "My Packges",
+      path: "/my-packges",
+      iconClassName: "fa-solid fa-box-open",
+    },
+    {
       label: "Profile",
       path: "/profile",
       iconClassName: "fa-regular fa-address-card",

@@ -6,12 +6,13 @@ import {
   Login,
   Signup,
   Users,
-  UsersForm,
+  AccountsHome,
   MyEvents,
   CreateEvent,
   Profile,
   MyInbox,
   MyFavourite,
+  MyPackges,
 } from "../pages";
 
 export const PublicRoutes = [
@@ -51,11 +52,11 @@ export const PrivateRoutes = [
   },
   {
     path: "/users/:id",
-    element: <UsersForm />,
+    element: <AccountsHome />,
   },
   {
     path: "/account",
-    element: <UsersForm />,
+    element: <AccountsHome />,
   },
   {
     path: "/create-event",
@@ -73,6 +74,12 @@ export const PrivateRoutes = [
     path: "/profile",
     element: <Profile />,
   },
+  {
+    path: "/my-packges",
+    element: <MyPackges />,
+  },
+
+  
   {
     path: "/my-fabourites",
     element: <MyFavourite />,

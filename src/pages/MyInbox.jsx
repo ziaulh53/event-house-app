@@ -1,9 +1,12 @@
-import React from 'react'
+import React from "react";
+import { LayoutAccount, PageTitle } from "../components/DashboardLayout";
 
 const MyInbox = () => {
   return (
-    <center className='font-bold mt-8 text-4xl'>MyInbox</center>
-  )
-}
+    <LayoutAccount>
+      <PageTitle title="MyInbox" />
+    </LayoutAccount>
+  );
+};
 
-export default MyInbox
+export default MyInbox;

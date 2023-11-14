@@ -1,12 +1,12 @@
 import React from "react";
 import { LayoutAccount, PageTitle } from "../components/DashboardLayout";
 
-const MyFavourite = () => {
+const AccountsHome = () => {
   return (
     <LayoutAccount>
-      <PageTitle title="MyFavourites" />
+      <PageTitle title="Accounts Home" />
     </LayoutAccount>
   );
 };
 
-export default MyFavourite;
+export default AccountsHome;

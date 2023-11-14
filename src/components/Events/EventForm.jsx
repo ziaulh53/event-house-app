@@ -80,7 +80,7 @@ export const EventForm = ({
       <div className="font-bold mb-2">
         Sample Images <span>(max 5)</span>
       </div>
-      <div className="grid grid-cols-4 gap-y-4">
+      <div className="grid grid-cols-5 gap-y-4">
         {fromEdit &&
           fileList?.map((url, idx) => (
             <div
