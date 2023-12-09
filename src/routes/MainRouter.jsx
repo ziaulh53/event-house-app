@@ -5,7 +5,7 @@ import { AuthRoutes, PrivateRoutes, PublicRoutes } from "./routers";
 import { AuthRoute } from "./RouterProtector";
 import { PrivateRoute } from "./RouterProtector";
 
-const AppRouter = () => {
+const MainRouter = () => {
   return (
     <BrowserRouter>
       <Routes>
@@ -38,4 +38,4 @@ const AppRouter = () => {
   );
 };
 
-export default AppRouter;
+export default MainRouter;

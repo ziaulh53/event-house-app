@@ -9,7 +9,9 @@ export const auth = {
     updatePassword:'/update-password/'
 }
 
-
+export const banner = {
+    getBanner:'/banner'
+}
 
 export const category = {
     getCategory: '/category',
@@ -29,3 +31,4 @@ export const favourite= {
 
 
 export const fileUpload = '/file-upload';
+

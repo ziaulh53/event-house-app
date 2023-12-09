@@ -4,7 +4,7 @@ import { LayoutAccount, PageTitle } from "../components/DashboardLayout";
 const MyFavourite = () => {
   return (
     <LayoutAccount>
-      <PageTitle title="MyFavourites" />
+      <PageTitle title="My Favourites" />
     </LayoutAccount>
   );
 };

@@ -6,7 +6,7 @@ const EventSlider = ({ images=[] }) => {
     console.log(currentSlide);
   };
   return (
-    <Carousel afterChange={onChange} className="rounded-lg">
+    <Carousel afterChange={onChange} className="rounded-lg" autoplay>
       {JSON.parse(images)?.map((image, idx) => (
         <div key={idx}>
           <img

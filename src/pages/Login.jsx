@@ -22,12 +22,9 @@ const Login = () => {
   const onSubmit = async() => {
     try {
       const result = await api.post(auth.login, credential);
-      console.log(result);
+      notify(result);
       if(result.success){
-        notify(result);
         dispatch(loginStore({user: result?.user, token: result?.token}));
-      }else{
-        notify(result);
       }
     } catch (error) {
       console.log(error);

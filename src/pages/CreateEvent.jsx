@@ -23,15 +23,13 @@ const CreateEvent = () => {
         images.push(file?.response?.url);
       });
       const res = await api.post(services.services, { ...state, images });
+      notify(res);
       if (res.success) {
         navigate("/my-events");
-        notify(res);
         console.log(res.data);
-      } else {
-        notify(res);
-      }
+      } 
+      
     } catch (error) {
-      notify(error);
       console.log(error);
     }
     setLoading(false);
